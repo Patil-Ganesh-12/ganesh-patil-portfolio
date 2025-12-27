@@ -33,18 +33,20 @@ let letter = '';
     });
 });*/
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    const targetId = this.getAttribute('href');
-    const target = document.querySelector(targetId);
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            const target = document.querySelector(targetId);
 
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  });
+            if (target) {
+                e.preventDefault();
+                const yOffset = -80; // navbar height
+                const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+            }
+        });
+    });
 });
+
 
