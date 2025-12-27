@@ -111,6 +111,7 @@ body {
 /* Sections General */
 section {
     padding: 80px 8%;
+    scroll-margin-top: 80px;
 }
 
 .section-title {
