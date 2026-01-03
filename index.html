@@ -9,29 +9,6 @@
 </head>
 <body>
 
-    <div class="code-bg">
-  <pre><code>
-public class Application {
-    public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
-    }
-}
-
-@RestController
-class UserController {
-
-    @GetMapping("/users")
-    public List<User> getUsers() {
-        return userService.findAll();
-    }
-}
-
-SELECT * FROM users WHERE status = 'ACTIVE';
-
-docker build -t backend-app .
-docker run -p 8080:8080 backend-app
-  </code></pre>
-</div>
 
     <nav class="navbar">
         <div class="logo">Ganesh<span>.Dev</span></div>
