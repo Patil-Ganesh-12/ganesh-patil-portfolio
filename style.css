@@ -1,3 +1,49 @@
+/* ===============================
+   HERO CODE BACKGROUND EFFECT
+================================ */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Code background layer */
+.code-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.18;
+}
+
+/* Code styling */
+.code-bg pre {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #00ffcc;
+    filter: blur(2.5px);
+    white-space: pre-wrap;
+    animation: scrollCode 25s linear infinite;
+}
+
+/* Move code upward slowly */
+@keyframes scrollCode {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+/* Ensure hero content stays above */
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
 
 
 /* General Reset */
